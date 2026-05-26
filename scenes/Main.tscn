@@ -2,15 +2,53 @@
 
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://assets/graphics/map.png" id="1_elqb8"]
 [ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/Player.tscn" id="2_rvslj"]
+[ext_resource type="PackedScene" uid="uid://bx2rg78cu21y2" path="res://scenes/Tree.tscn" id="3_0bbpv"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0bbpv"]
+a = Vector2(8, -328)
+b = Vector2(8, 312)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rarhs"]
+b = Vector2(-1.6785172e-05, -384)
 
 [node name="Main" type="Node2D" unique_id=1120329893]
 metadata/_edit_vertical_guides_ = [1920.0]
 metadata/_edit_horizontal_guides_ = [1080.0]
 
 [node name="Map" type="Sprite2D" parent="." unique_id=1564908248]
-position = Vector2(192, 324)
-scale = Vector2(1, 1.0125)
+position = Vector2(192, 320)
 texture = ExtResource("1_elqb8")
 
 [node name="Player" parent="." unique_id=1240177178 instance=ExtResource("2_rvslj")]
 position = Vector2(248, 328)
+
+[node name="Tree" parent="." unique_id=1937586874 instance=ExtResource("3_0bbpv")]
+position = Vector2(160, 536)
+
+[node name="Borders" type="Node" parent="." unique_id=702434313]
+
+[node name="Left" type="StaticBody2D" parent="Borders" unique_id=2087445480]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Left" unique_id=385353693]
+position = Vector2(-8, 328)
+shape = SubResource("SegmentShape2D_0bbpv")
+
+[node name="Right" type="StaticBody2D" parent="Borders" unique_id=485084164]
+position = Vector2(384, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Right" unique_id=268164680]
+position = Vector2(-8, 328)
+shape = SubResource("SegmentShape2D_0bbpv")
+
+[node name="Top" type="StaticBody2D" parent="Borders" unique_id=1386872473]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top" unique_id=416381612]
+rotation = 1.5707964
+shape = SubResource("SegmentShape2D_rarhs")
+
+[node name="Bottom" type="StaticBody2D" parent="Borders" unique_id=1571500327]
+position = Vector2(0, 640)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom" unique_id=1315455344]
+rotation = 1.5707964
+shape = SubResource("SegmentShape2D_rarhs")

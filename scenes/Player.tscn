@@ -3,17 +3,27 @@
 [ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://assets/graphics/player/player_simple.png" id="1_p0vlq"]
 [ext_resource type="Script" uid="uid://ostmyaajllle" path="res://scripts/player.gd" id="1_v6fml"]
 
-[node name="Player" type="Node2D" unique_id=1240177178]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6fml"]
+size = Vector2(20.666668, 20.666668)
+
+[node name="Player" type="CharacterBody2D" unique_id=1720772128]
 script = ExtResource("1_v6fml")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1588580734]
 texture = ExtResource("1_p0vlq")
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=842288235]
 zoom = Vector2(5, 5)
 limit_left = 0
 limit_top = 0
 limit_right = 384
-limit_bottom = 648
+limit_bottom = 640
+limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2062743606]
+position = Vector2(0.25000012, 0.25000012)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_v6fml")

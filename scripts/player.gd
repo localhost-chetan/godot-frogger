@@ -1,8 +1,9 @@
-extends Node2D
+extends CharacterBody2D
 
-var speed := 200
+var speed := 150
 var direction := Vector2.ZERO
 
-func _physics_process(delta: float):
+func _physics_process(_delta: float):
 	direction = Input.get_vector("left", "right", "up", "down")
-	self.position += (direction * speed) * delta
+	self.velocity = direction * speed
+	self.move_and_slide()
