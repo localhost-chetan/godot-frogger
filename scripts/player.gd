@@ -1,7 +1,8 @@
 extends Node2D
 
 var speed := 200
-var direction := Vector2(1, 1)
+var direction := Vector2.ZERO
 
-func _process(delta: float):
+func _physics_process(delta: float):
+	direction = Input.get_vector("left", "right", "up", "down")
 	self.position += (direction * speed) * delta
