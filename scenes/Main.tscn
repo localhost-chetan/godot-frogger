@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://1vm17o6m07np"]
 
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://assets/graphics/map.png" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/Player.tscn" id="2_rvslj"]
 
 [node name="Main" type="Node2D" unique_id=1120329893]
 metadata/_edit_vertical_guides_ = [1920.0]
+metadata/_edit_horizontal_guides_ = [1080.0]
 
 [node name="Map" type="Sprite2D" parent="." unique_id=1564908248]
 position = Vector2(192, 324)
 scale = Vector2(1, 1.0125)
 texture = ExtResource("1_elqb8")
+
+[node name="Player" parent="." unique_id=1240177178 instance=ExtResource("2_rvslj")]
+position = Vector2(248, 328)
