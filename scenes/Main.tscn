@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://1vm17o6m07np"]
 
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://assets/graphics/map.png" id="1_elqb8"]
+[ext_resource type="Script" uid="uid://bpolqxhr17xih" path="res://scripts/main.gd" id="1_rarhs"]
 [ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/Player.tscn" id="2_rvslj"]
 [ext_resource type="PackedScene" uid="uid://bx2rg78cu21y2" path="res://scenes/Tree.tscn" id="3_0bbpv"]
 
@@ -12,35 +13,35 @@ b = Vector2(8, 312)
 b = Vector2(-1.6785172e-05, -384)
 
 [node name="Main" type="Node2D" unique_id=1120329893]
+script = ExtResource("1_rarhs")
 metadata/_edit_vertical_guides_ = [1920.0]
 metadata/_edit_horizontal_guides_ = [1080.0]
 
 [node name="Map" type="Sprite2D" parent="." unique_id=1564908248]
 position = Vector2(192, 320)
 texture = ExtResource("1_elqb8")
-
-[node name="Player" parent="." unique_id=1240177178 instance=ExtResource("2_rvslj")]
-position = Vector2(248, 328)
-
-[node name="Tree" parent="." unique_id=1937586874 instance=ExtResource("3_0bbpv")]
-position = Vector2(160, 536)
+metadata/_edit_lock_ = true
 
 [node name="Borders" type="Node" parent="." unique_id=702434313]
 
 [node name="Left" type="StaticBody2D" parent="Borders" unique_id=2087445480]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Left" unique_id=385353693]
 position = Vector2(-8, 328)
 shape = SubResource("SegmentShape2D_0bbpv")
 
 [node name="Right" type="StaticBody2D" parent="Borders" unique_id=485084164]
+visible = false
 position = Vector2(384, 0)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Right" unique_id=268164680]
 position = Vector2(-8, 328)
 shape = SubResource("SegmentShape2D_0bbpv")
 
 [node name="Top" type="StaticBody2D" parent="Borders" unique_id=1386872473]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top" unique_id=416381612]
 rotation = 1.5707964
@@ -48,7 +49,49 @@ shape = SubResource("SegmentShape2D_rarhs")
 
 [node name="Bottom" type="StaticBody2D" parent="Borders" unique_id=1571500327]
 position = Vector2(0, 640)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom" unique_id=1315455344]
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_rarhs")
+
+[node name="Timers" type="Node" parent="." unique_id=1083083303]
+
+[node name="CarTimer" type="Timer" parent="Timers" unique_id=939111013]
+autostart = true
+
+[node name="Objects" type="Node" parent="." unique_id=21522748]
+
+[node name="Player" parent="Objects" unique_id=1240177178 instance=ExtResource("2_rvslj")]
+position = Vector2(248, 328)
+
+[node name="Tree" parent="Objects" unique_id=1937586874 instance=ExtResource("3_0bbpv")]
+position = Vector2(160, 536)
+
+[node name="CarStartPositions" type="Node" parent="." unique_id=1349737362]
+
+[node name="Marker2D" type="Marker2D" parent="CarStartPositions" unique_id=1145131097]
+position = Vector2(384, 205)
+
+[node name="Marker2D2" type="Marker2D" parent="CarStartPositions" unique_id=2086779333]
+position = Vector2(0, 229)
+
+[node name="Marker2D4" type="Marker2D" parent="CarStartPositions" unique_id=1323554784]
+position = Vector2(0, 297)
+
+[node name="Marker2D8" type="Marker2D" parent="CarStartPositions" unique_id=758838323]
+position = Vector2(0, 436)
+
+[node name="Marker2D3" type="Marker2D" parent="CarStartPositions" unique_id=2049290339]
+position = Vector2(384, 269)
+
+[node name="Marker2D5" type="Marker2D" parent="CarStartPositions" unique_id=1679583632]
+position = Vector2(384, 324)
+
+[node name="Marker2D6" type="Marker2D" parent="CarStartPositions" unique_id=1635800100]
+position = Vector2(384, 413)
+
+[node name="Marker2D7" type="Marker2D" parent="CarStartPositions" unique_id=1369309987]
+position = Vector2(384, 462)
+
+[connection signal="timeout" from="Timers/CarTimer" to="." method="_on_car_timer_timeout"]
