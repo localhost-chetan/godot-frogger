@@ -94,9 +94,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6fml"]
-size = Vector2(31, 20.666668)
+size = Vector2(24.697117, 25.314322)
 
 [node name="Player" type="CharacterBody2D" unique_id=1720772128]
+collision_layer = 2
+collision_mask = 13
 script = ExtResource("1_v6fml")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1108613231]
@@ -116,6 +118,6 @@ position_smoothing_enabled = true
 position_smoothing_speed = 15.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2062743606]
-position = Vector2(0.035, 0.25)
-scale = Vector2(0.25, 0.5)
+position = Vector2(-0.089, 4.454)
+scale = Vector2(0.337, 0.198)
 shape = SubResource("RectangleShape2D_v6fml")

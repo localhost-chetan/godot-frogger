@@ -5,7 +5,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ys5ts"]
 
-[node name="Car" type="AnimatableBody2D" unique_id=512862296]
+[node name="Car" type="Area2D" unique_id=1304485464]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_ys5ts")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1793710748]

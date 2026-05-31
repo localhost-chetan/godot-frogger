@@ -15,10 +15,9 @@ func _physics_process(_delta: float):
 
 func animation():
 	if (direction):
-		$AnimatedSprite2D.flip_h = direction.x > 0
-		
 		if (direction.x != 0):
 			$AnimatedSprite2D.animation = "left"
+			$AnimatedSprite2D.flip_h = direction.x > 0 # Flip sprite horizontally when moving right
 		else:
 			$AnimatedSprite2D.animation = "up" if (direction.y < 0) else "down"
 	else:

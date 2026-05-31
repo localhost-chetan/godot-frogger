@@ -1,4 +1,4 @@
-extends AnimatableBody2D
+extends Area2D
 
 
 var direction := Vector2.LEFT

@@ -12,6 +12,12 @@ b = Vector2(8, 312)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rarhs"]
 b = Vector2(-1.6785172e-05, -384)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rarhs"]
+size = Vector2(136.7861, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcsgt"]
+size = Vector2(51.336895, 14)
+
 [node name="Main" type="Node2D" unique_id=1120329893]
 script = ExtResource("1_rarhs")
 metadata/_edit_vertical_guides_ = [1920.0]
@@ -20,11 +26,12 @@ metadata/_edit_horizontal_guides_ = [1080.0]
 [node name="Map" type="Sprite2D" parent="." unique_id=1564908248]
 position = Vector2(192, 320)
 texture = ExtResource("1_elqb8")
-metadata/_edit_lock_ = true
 
 [node name="Borders" type="Node" parent="." unique_id=702434313]
 
 [node name="Left" type="StaticBody2D" parent="Borders" unique_id=2087445480]
+collision_layer = 8
+collision_mask = 0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Left" unique_id=385353693]
@@ -34,6 +41,8 @@ shape = SubResource("SegmentShape2D_0bbpv")
 [node name="Right" type="StaticBody2D" parent="Borders" unique_id=485084164]
 visible = false
 position = Vector2(384, 0)
+collision_layer = 8
+collision_mask = 0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Right" unique_id=268164680]
@@ -41,6 +50,8 @@ position = Vector2(-8, 328)
 shape = SubResource("SegmentShape2D_0bbpv")
 
 [node name="Top" type="StaticBody2D" parent="Borders" unique_id=1386872473]
+collision_layer = 8
+collision_mask = 0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top" unique_id=416381612]
@@ -49,6 +60,8 @@ shape = SubResource("SegmentShape2D_rarhs")
 
 [node name="Bottom" type="StaticBody2D" parent="Borders" unique_id=1571500327]
 position = Vector2(0, 640)
+collision_layer = 8
+collision_mask = 0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom" unique_id=1315455344]
@@ -60,10 +73,11 @@ shape = SubResource("SegmentShape2D_rarhs")
 [node name="CarTimer" type="Timer" parent="Timers" unique_id=939111013]
 autostart = true
 
-[node name="Objects" type="Node" parent="." unique_id=21522748]
+[node name="Objects" type="Node2D" parent="." unique_id=42097411]
+y_sort_enabled = true
 
 [node name="Player" parent="Objects" unique_id=1240177178 instance=ExtResource("2_rvslj")]
-position = Vector2(248, 328)
+position = Vector2(136, 536)
 
 [node name="Tree" parent="Objects" unique_id=1937586874 instance=ExtResource("3_0bbpv")]
 position = Vector2(160, 536)
@@ -93,5 +107,23 @@ position = Vector2(384, 413)
 
 [node name="Marker2D7" type="Marker2D" parent="CarStartPositions" unique_id=1369309987]
 position = Vector2(384, 462)
+
+[node name="Collisions" type="Node" parent="." unique_id=1386182456]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collisions" unique_id=1878651743]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D" unique_id=1414332755]
+position = Vector2(112.052505, 248)
+scale = Vector2(0.935, 1)
+shape = SubResource("RectangleShape2D_rarhs")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Collisions" unique_id=1436153887]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D2" unique_id=1523497868]
+position = Vector2(312, 248)
+scale = Vector2(0.935, 1)
+shape = SubResource("RectangleShape2D_vcsgt")
 
 [connection signal="timeout" from="Timers/CarTimer" to="." method="_on_car_timer_timeout"]
