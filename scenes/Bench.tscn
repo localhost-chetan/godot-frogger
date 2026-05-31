@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bykvavuyy06ke"]
+
+[ext_resource type="Texture2D" uid="uid://cxutqp0hti8vw" path="res://assets/graphics/objects/bench.png" id="1_b7sk5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxhcq"]
+size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7sk5"]
+
+[node name="Bench" type="StaticBody2D" unique_id=1538761399]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=218316248]
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("1_b7sk5")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=324846268]
+position = Vector2(-1.23, 2.35)
+scale = Vector2(0.78, 0.65)
+shape = SubResource("RectangleShape2D_jxhcq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=886868794]
+position = Vector2(4.245, 2.415)
+scale = Vector2(0.18, 0.65)
+shape = SubResource("RectangleShape2D_b7sk5")

@@ -9,9 +9,11 @@
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_ys5ts")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1793710748]
 texture = ExtResource("1_7u4s5")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1774310614]
 shape = SubResource("RectangleShape2D_ys5ts")
