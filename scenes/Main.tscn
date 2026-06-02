@@ -102,7 +102,7 @@ autostart = true
 y_sort_enabled = true
 
 [node name="Player" parent="Objects" unique_id=1240177178 instance=ExtResource("2_rvslj")]
-position = Vector2(136, 536)
+position = Vector2(345, 104)
 
 [node name="RedTree" parent="Objects" unique_id=1937586874 instance=ExtResource("3_0bbpv")]
 position = Vector2(160, 536)
@@ -228,11 +228,11 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Objects/SignalLight" unique_id=1331748609]
 position = Vector2(-0.11999512, 7.1466675)
 texture = ExtResource("12_bjd11")
-offset = Vector2(0.11999512, -7.1466675)
+offset = Vector2(0.12, -12.032)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/SignalLight" unique_id=1358830257]
-position = Vector2(0, 8.265)
-scale = Vector2(0.2, 0.45)
+position = Vector2(0, 4.6)
+scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_bjd11")
 
 [node name="SignalLight2" type="StaticBody2D" parent="Objects" unique_id=751737530]
@@ -242,10 +242,10 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Objects/SignalLight2" unique_id=51651268]
 position = Vector2(3.800003, 3.0100098)
 texture = ExtResource("13_qmy6f")
-offset = Vector2(-3.800003, -3.0100098)
+offset = Vector2(-3.8, -8.185)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/SignalLight2" unique_id=1588492458]
-position = Vector2(3.965, 9.295)
+position = Vector2(3.965, 3.37)
 scale = Vector2(0.22, 0.28)
 shape = SubResource("RectangleShape2D_mwfav")
 
@@ -256,11 +256,11 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Objects/SignBoard" unique_id=966254863]
 position = Vector2(0, 8)
 texture = ExtResource("14_mwfav")
-offset = Vector2(0, -8)
+offset = Vector2(0, -15.93)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/SignBoard" unique_id=632016340]
-position = Vector2(0, 9.855)
-scale = Vector2(0.147, 0.48)
+position = Vector2(0, 2.875)
+scale = Vector2(0.147, 0.15)
 shape = SubResource("RectangleShape2D_3p2gp")
 
 [node name="House" type="StaticBody2D" parent="Objects" unique_id=1010133184]
@@ -298,7 +298,7 @@ texture = ExtResource("16_cvmbd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/House3" unique_id=1399847691]
 position = Vector2(0, -1.255)
-scale = Vector2(2.35, 3)
+scale = Vector2(4.77, 3.82)
 shape = SubResource("RectangleShape2D_ft6cd")
 
 [node name="CarStartPositions" type="Node" parent="." unique_id=1349737362]

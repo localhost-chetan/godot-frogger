@@ -1,5 +1,3 @@
-# Project Description
-
 ## Overview
 A 2D top-down survival game built in Godot 4.6.2 using GDScript. The player must cross multiple crowded roads within a time limit and reach the destination without getting hit by traffic.
 

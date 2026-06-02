@@ -8,9 +8,11 @@
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=538259548]
+position = Vector2(0, 12)
 texture = ExtResource("1_essmu")
+offset = Vector2(0, -15.73)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1367153486]
-position = Vector2(0, 9.45)
-scale = Vector2(0.37, 0.35)
+position = Vector2(0, 6.7)
+scale = Vector2(0.37, 0.3)
 shape = SubResource("RectangleShape2D_1johf")
