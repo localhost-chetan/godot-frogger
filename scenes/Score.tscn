@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cuh1nmxryt2nq"]
+
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://assets/fonts/Better VCR 9.0.1.ttf" id="1_chgv4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hauk"]
+font = ExtResource("1_chgv4")
+font_size = 30
+shadow_size = 13
+shadow_color = Color(0.11120737, 0.050752357, 0.11356074, 1)
+shadow_offset = Vector2(1.5, 0.94)
+
+[node name="Score" type="Control" unique_id=1522228327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1365891649]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 15.0
+offset_right = 60.0
+offset_bottom = 65.0
+grow_horizontal = 2
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_5hauk")

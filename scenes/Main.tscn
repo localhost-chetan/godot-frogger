@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://oqgtp468wc6x" path="res://assets/graphics/objects/sign.png" id="14_mwfav"]
 [ext_resource type="Texture2D" uid="uid://73gfa8tjrcik" path="res://assets/graphics/objects/house3.png" id="15_3p2gp"]
 [ext_resource type="Texture2D" uid="uid://d1h0ksxlju0ou" path="res://assets/graphics/objects/house1.png" id="16_cvmbd"]
+[ext_resource type="PackedScene" uid="uid://cuh1nmxryt2nq" path="res://scenes/Score.tscn" id="17_ft6cd"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0bbpv"]
 a = Vector2(8, -328)
@@ -346,5 +347,11 @@ metadata/_edit_lock_ = true
 position = Vector2(311.99997, 248)
 scale = Vector2(0.935, 1)
 shape = SubResource("RectangleShape2D_vcsgt")
+
+[node name="UI" type="Node" parent="." unique_id=779533784]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI" unique_id=1495055844]
+
+[node name="Score" parent="UI/CanvasLayer" unique_id=1522228327 instance=ExtResource("17_ft6cd")]
 
 [connection signal="timeout" from="Timers/CarTimer" to="." method="_on_car_timer_timeout"]
