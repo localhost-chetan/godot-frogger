@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var speed := 150
+var speed := 100
 var direction := Vector2.ZERO
 
 
