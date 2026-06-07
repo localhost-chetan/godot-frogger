@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://oqgtp468wc6x" path="res://assets/graphics/objects/sign.png" id="14_mwfav"]
 [ext_resource type="Texture2D" uid="uid://73gfa8tjrcik" path="res://assets/graphics/objects/house3.png" id="15_3p2gp"]
 [ext_resource type="Texture2D" uid="uid://d1h0ksxlju0ou" path="res://assets/graphics/objects/house1.png" id="16_cvmbd"]
-[ext_resource type="PackedScene" uid="uid://cuh1nmxryt2nq" path="res://scenes/Score.tscn" id="17_ft6cd"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://assets/fonts/Better VCR 9.0.1.ttf" id="17_ft6cd"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0bbpv"]
 a = Vector2(8, -328)
@@ -42,6 +42,16 @@ size = Vector2(136.7861, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcsgt"]
 size = Vector2(51.336895, 14)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bb450"]
+font = ExtResource("17_ft6cd")
+font_size = 25
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.9098039)
+shadow_offset = Vector2(1.2, 1.2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb450"]
+size = Vector2(20, 17)
 
 [node name="Main" type="Node2D" unique_id=1120329893]
 script = ExtResource("1_rarhs")
@@ -99,11 +109,14 @@ shape = SubResource("SegmentShape2D_rarhs")
 [node name="CarTimer" type="Timer" parent="Timers" unique_id=939111013]
 autostart = true
 
+[node name="ScoreTimer" type="Timer" parent="Timers" unique_id=902623458]
+autostart = true
+
 [node name="Objects" type="Node2D" parent="." unique_id=42097411]
 y_sort_enabled = true
 
 [node name="Player" parent="Objects" unique_id=1240177178 instance=ExtResource("2_rvslj")]
-position = Vector2(345, 104)
+position = Vector2(125, 620)
 
 [node name="RedTree" parent="Objects" unique_id=1937586874 instance=ExtResource("3_0bbpv")]
 position = Vector2(160, 536)
@@ -352,6 +365,44 @@ shape = SubResource("RectangleShape2D_vcsgt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI" unique_id=1495055844]
 
-[node name="Score" parent="UI/CanvasLayer" unique_id=1522228327 instance=ExtResource("17_ft6cd")]
+[node name="ColorRect" type="ColorRect" parent="UI/CanvasLayer" unique_id=1277191793]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05, 1.05)
+pivot_offset = Vector2(100, 23.809526)
+color = Color(0.047058824, 0.047058824, 0.047058824, 0.7254902)
+
+[node name="Score" type="Label" parent="UI/CanvasLayer/ColorRect" unique_id=214324324]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -16.5
+offset_right = 75.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_bb450")
+
+[node name="FinishArea" type="Area2D" parent="." unique_id=1251984012]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea" unique_id=207948156]
+position = Vector2(238.69, 87.735)
+shape = SubResource("RectangleShape2D_bb450")
 
 [connection signal="timeout" from="Timers/CarTimer" to="." method="_on_car_timer_timeout"]
+[connection signal="timeout" from="Timers/ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_body_entered"]

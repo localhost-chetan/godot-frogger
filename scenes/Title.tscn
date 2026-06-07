@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bg46h5x2n6eev"]
+
+[ext_resource type="FontFile" uid="uid://dr201ov4c76pb" path="res://assets/fonts/Crackman.otf" id="1_ascc0"]
+[ext_resource type="Script" uid="uid://2ll1r0hgkriv" path="res://scripts/title.gd" id="1_iyajp"]
+[ext_resource type="Texture2D" uid="uid://ded8huv3lr1a7" path="res://assets/graphics/cars/yellow.png" id="2_lq0lj"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://assets/fonts/Better VCR 9.0.1.ttf" id="3_2sdm5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lq0lj"]
+font = ExtResource("1_ascc0")
+font_size = 150
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iyajp"]
+font = ExtResource("3_2sdm5")
+font_size = 35
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Control" unique_id=26131029]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iyajp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=16304559]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23802525, 0.16366187, 0.41250637, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1506353761]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -431.0
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Frogger"
+label_settings = SubResource("LabelSettings_lq0lj")
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=200419423]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.99994
+offset_top = -225.0
+offset_right = -34.99994
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+texture = ExtResource("2_lq0lj")
+
+[node name="Score" type="Label" parent="ColorRect" unique_id=1155086399]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 469.0
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Total Score: 0"
+label_settings = SubResource("LabelSettings_iyajp")

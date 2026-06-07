@@ -17,15 +17,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1696475781]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.11
+anchor_bottom = 0.075
+color = Color(0.036556315, 0.036556326, 0.03655629, 0.80784315)
+
 [node name="Label" type="Label" parent="." unique_id=1365891649]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -120.0
-offset_top = 15.0
-offset_right = 60.0
-offset_bottom = 65.0
-grow_horizontal = 2
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.075
+offset_left = 15.0
+offset_top = 20.0
+offset_right = 8.0
+offset_bottom = -23.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_5hauk")

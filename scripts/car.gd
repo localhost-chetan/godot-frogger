@@ -18,6 +18,5 @@ func _ready():
 func _physics_process(delta: float):
 	self.position += (direction * speed) * delta	# speed px/second
 	
-
-func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
-	self.queue_free()
+	if (self.position.x < -20 or self.position.x > 400):
+		self.queue_free()
